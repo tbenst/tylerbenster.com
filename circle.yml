@@ -18,10 +18,10 @@ dependencies:
     - gunzip /tmp/stack.gz && chmod +x /tmp/stack
     - sudo mv /tmp/stack /usr/bin/stack
   override:
-    - stack setup
+    - stack setup --no-terminal
     # why double up? idk but: https://github.com/begriffs/haskell-circle-example/blob/master/circle.yml
     - stack build --fast
-  	- stack build --fast --pedantic --haddock --test --no-run-tests --no-haddock-deps
+    - stack build --fast --pedantic --haddock --test --no-run-tests --no-haddock-deps
 
 test:
   override:
