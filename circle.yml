@@ -12,16 +12,19 @@ dependencies:
   cache_directories:
     - "~/.stack"
     - ".stack-work"
-    - "_cache"
+    # - "/_cache"
   pre:
     - wget https://github.com/commercialhaskell/stack/releases/download/v1.4.0/stack-1.4.0-linux-x86_64.tar.gz -O /tmp/stack.gz
     - gunzip /tmp/stack.gz && chmod +x /tmp/stack
     - sudo mv /tmp/stack /usr/bin/stack
   override:
     - stack setup --no-terminal
+    # idk...
+    # - stack install hlint packdeps cabal-install
+    # - rm -fr $(stack path --dist-dir) $(stack path --local-install-root)
     # why double up? idk but: https://github.com/begriffs/haskell-circle-example/blob/master/circle.yml
     - stack build --fast
-    - stack build --fast --pedantic --haddock --test --no-run-tests --no-haddock-deps
+    # - stack build --fast --pedantic --haddock --test --no-run-tests --no-haddock-deps
 
 test:
   override:
