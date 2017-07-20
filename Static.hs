@@ -12,6 +12,10 @@ main = hakyllWith config $ do
         route   idRoute
         compile copyFileCompiler
 
+    match "media/*" $ do
+        route   idRoute
+        compile copyFileCompiler
+
     match "css/*" $ do
         route   idRoute
         compile compressCssCompiler
@@ -29,7 +33,7 @@ main = hakyllWith config $ do
             >>= loadAndApplyTemplate "templates/default.html" postCtx
             >>= relativizeUrls
 
-    create ["archive.html"] $ do
+    create ["blog.html"] $ do
         route idRoute
         compile $ do
             posts <- recentFirst =<< loadAll "posts/*"

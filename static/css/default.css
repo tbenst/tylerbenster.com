@@ -1,13 +1,13 @@
-body {
+/*body {
     color: black;
     font-size: 16px;
     margin: 0px auto 0px auto;
     width: 600px;
-}
+}*/
 
 header {
-    border-bottom: 2px solid black;
-    margin-bottom: 30px;
+    /*border-bottom: 2px solid black;*/
+    /*margin-bottom: 30px;*/
     padding: 12px 0px 12px 0px;
 }
 
@@ -23,6 +23,97 @@ nav a {
     text-decoration: none;
     text-transform: uppercase;
 }
+
+html{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+p {
+    margin: 0;
+}
+
+.hero {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    max-width:100%;
+    overflow: hidden;
+    background-size: cover;
+    background:  linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 0.5)
+    );
+}
+.hero h1 {
+    /*position: fixed;*/
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    bottom: 200px;
+    color: white;
+    font-size: 100px;
+
+}
+
+.hero video {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    /*-ms-transform: translateX(-50%) translateY(-50%);*/
+    /*-moz-transform: translateX(-50%) translateY(-50%);*/
+    /*-webkit-transform: translateX(-50%) translateY(-50%);*/
+    transform: translateX(-50%) translateY(-50%);
+    background: url(/images/drone-image.jpg) no-repeat;
+    /*mix-blend-mode: overlay;*/
+}
+
+.hero ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    text-align: center;
+    bottom: 20px;
+    position: fixed;
+    font-size: 40px;
+    width: 100%;
+    /*background-color: #333;*/
+}
+
+.hero li {
+    display: inline-block;
+}
+
+.hero li a {
+    /*display: inline;*/
+    float: none;
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    text-decoration: underline;
+}
+
+.section {
+    position: relative;
+    background-color: white;
+}
+
 
 footer {
     border-top: solid 2px black;
