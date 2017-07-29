@@ -84,7 +84,7 @@ img {
 .hero h1 {
     text-align: center;
     color: white;
-    font-size: 8em;
+    font-size: 6em;
     margin: 0.2em;
 
 }
@@ -102,20 +102,21 @@ nav {
 }
 
 nav .item {
-    padding: 0em 1em 0.5em 1em;
+    padding: 0;
     flex-grow: 1;
     /*flex: 1;*/
 }
 
 nav .logo {
-    padding: 0.5em 0 0 0;
+    margin: 0.5em 0 0 0;
     font-size: 1.8em;
     float: left;
     font-weight: bold;
 }
 
 .hero nav .item {
-    margin: 2em;
+    margin: 1em 1em 1em 1em;
+    /*margin: 0em;*/
     flex-grow: 1;
     /*flex: 1;*/
 }
@@ -164,16 +165,6 @@ h2 > a:hover:before {
 .section {
     position: relative;
     background-color: white;
-}
-
-
-footer {
-    border-top: solid 2px black;
-    color: #555;
-    font-size: 12px;
-    margin-top: 30px;
-    padding: 12px 0px 12px 0px;
-    text-align: right;
 }
 
 h1 {
