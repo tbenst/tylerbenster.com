@@ -8,26 +8,15 @@
 header {
     /*border-bottom: 2px solid black;*/
     /*margin-bottom: 30px;*/
-    padding: 12px 0px 12px 0px;
+    padding-bottom: 0.5em
 }
 
-nav {
-    text-align: center;
-}
-
-nav a {
-    color: black;
-    font-size: 18px;
-    font-weight: bold;
-    margin-left: 12px;
-    text-decoration: none;
-    text-transform: uppercase;
-}
 
 html{
     margin: 0;
     padding: 0;
     height: 100vh;
+    /*width: 100vh;*/
 }
 body {
     margin: 0;
@@ -37,6 +26,11 @@ body {
 
 p {
     margin: 0;
+}
+
+img {
+    max-width: 100vw;
+    max-height: 50vh;
 }
 
 .hero {
@@ -95,10 +89,29 @@ p {
 
 }
 
-.hero nav {
+nav {
     display: flex;
     flex-flow: row wrap;
-    align-items: center;
+    align-items: baseline;
+    text-align: center;
+    background-color: black;
+}
+
+.hero nav {
+    background-color: transparent;
+}
+
+nav .item {
+    padding: 0em 1em 0.5em 1em;
+    flex-grow: 1;
+    /*flex: 1;*/
+}
+
+nav .logo {
+    padding: 0.5em 0 0 0;
+    font-size: 1.8em;
+    float: left;
+    font-weight: bold;
 }
 
 .hero nav .item {
@@ -107,15 +120,46 @@ p {
     /*flex: 1;*/
 }
 
+nav .item a {
+    color: white;
+    font-size: 1.5em;
+    text-decoration: none;
+}
+
 .hero nav .item a {
     color: white;
     font-size: 3em;
-
+    text-decoration: none;
 }
 
+
+nav .item a:after {
+	content: '';
+	display: block;
+	margin: auto;
+	height: 3px;
+	width: 0px;
+	background: transparent;
+	transition: width .5s ease, background-color .5s ease;
+}
+
+nav .item a:hover:after {
+    width: 100%;
+	background: white;
+}
+/*
 .hero nav .item a:hover {
-    text-decoration: underline;
+border-bottom: 1px solid rgba(192, 192, 192, 1);
+
+.hero nav .item a:before {
+    text-decoration: none;
 }
+
+h2 > a:hover:before {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}*/
 
 .section {
     position: relative;
@@ -146,10 +190,10 @@ article .header {
     font-style: italic;
 }
 
-.logo a {
+/*.logo a {
     color: black;
     float: left;
-    font-size: 18px;
+    font-size: 2em;
     font-weight: bold;
     text-decoration: none;
-}
+}*/

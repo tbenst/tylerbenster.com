@@ -11,15 +11,7 @@
         $if(no_header)$
         $else$
             <header>
-                <div class="logo">
-                    <a href="/">Tyler Benster</a>
-                </div>
-                <nav>
-                    <a href="/">Home</a>
-                    <a href="/about.html">About</a>
-                    <a href="/contact.html">Contact</a>
-                    <a href="/archive.html">Archive</a>
-                </nav>
+                $partial("templates/nav.html")$
             </header>
         $endif$
 
