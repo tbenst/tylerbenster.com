@@ -190,10 +190,7 @@ article .header {
     font-style: italic;
 }
 
-/*.logo a {
-    color: black;
-    float: left;
-    font-size: 2em;
-    font-weight: bold;
-    text-decoration: none;
-}*/
+
+form {
+    padding: 0;
+}

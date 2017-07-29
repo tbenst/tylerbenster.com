@@ -17,8 +17,13 @@ main = hakyllWith config $ do
         compile copyFileCompiler
 
     match "css/*" $ do
-        route   idRoute
         compile compressCssCompiler
+
+    create ["master.css"] $ do
+        route idRoute
+        compile $ do
+            items <- loadAll "css/*" :: Compiler [Item String]
+            makeItem $ concat $ map itemBody items
 
     -- match (fromList ["about.rst", "contact.markdown"]) $ do
     --     route   $ setExtension "html"
