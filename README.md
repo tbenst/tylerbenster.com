@@ -1,6 +1,11 @@
 # tylerbenster.com
 [![CircleCI](https://circleci.com/gh/tbenst/tylerbenster.com.svg?style=svg&circle-token=644c3e1960b39a2a19cd795f1690f733a63a52a7)](https://circleci.com/gh/tbenst/tylerbenster.com)
 
+# pre-run
+should update keys, e.g. Sauron
+
+# Post-run
+Once, by hand, must run `sudo certbot --nginx -d www.tylerbenster.com`
 
 
 ## References
