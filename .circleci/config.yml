@@ -3,7 +3,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: haskell:8.6.5
+      - image: futtetennista/hakyll:4.9.8.0-ext
     environment:
       GH_EMAIL: deploy@tylerbenster.com
       GH_NAME: Circle-CI
@@ -14,21 +14,20 @@ jobs:
             - "6d:56:bf:3d:4b:38:05:a2:05:90:6f:a3:05:bd:7f:3d"
       - checkout
       - restore_cache:
-          # Read about caching dependencies: https://circleci.com/docs/2.0/caching/
           name: Restore Cached Dependencies
           keys:
-            - haskell-v1-{{ checksum "stack.yaml" }}-{{ checksum "package.yaml" }}
+            - haskell-v1-{{ checksum "stack.yaml" }}-{{ checksum "tylerbenster-com.cabal" }}
       - run:
           name: Resolve/Update Dependencies
           command: stack setup --no-terminal
       - run: stack build --fast
       - run: make build
-      - run:
-          name: deployment
-          command: ./deploy.sh _site
       - save_cache:
           name: Cache Dependencies
-          key: haskell-v1-{{ checksum "stack.yaml" }}-{{ checksum "package.yaml" }}
+          key: haskell-v1-{{ checksum "stack.yaml" }}-{{ checksum "tylerbenster-com.cabal" }}
           paths:
             - "/root/.stack"
             - ".stack-work"
+      - run:
+          name: deployment
+          command: ./deploy.sh _site
