@@ -11,7 +11,7 @@ jobs:
     steps:
       - add_ssh_keys:
           fingerprints:
-            - "6d:56:bf:3d:4b:38:05:a2:05:90:6f:a3:05:bd:7f:3d"
+            - "ee:89:f4:ba:52:92:72:20:8c:f4:4e:89:99:06:c1:36"
       - checkout
       - restore_cache:
           name: Restore Cached Dependencies
