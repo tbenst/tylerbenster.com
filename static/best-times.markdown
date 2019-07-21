@@ -14,13 +14,18 @@
 ###Swimming
 ####College
 100 FL 50.53
+
 100 BK 51.80
+
 200 BK 1:53.37
 
 ####High School
 100 FL 51.82
+
 200 FL 1:56.29
+
 400 FR Relay 3:06.62 state record (46.64 split)
+
 500 FR 4:42.97 Midlakes summer league record (now broken)
 
 ---
