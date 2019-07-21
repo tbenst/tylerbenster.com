@@ -1,0 +1,31 @@
+version: 2
+
+jobs:
+  build:
+    docker:
+      - image: haskell:8.6.5
+    environment:
+      GH_EMAIL: deploy@tylerbenster.com
+      GH_NAME: Circle-CI
+
+    steps:
+      - checkout
+      - restore_cache:
+        # Read about caching dependencies: https://circleci.com/docs/2.0/caching/
+        name: Restore Cached Dependencies
+        keys:
+          - haskell-v1-{{ checksum "stack.yaml" }}-{{ checksum "package.yaml" }}
+      - run:
+          name: Resolve/Update Dependencies
+          command: stack setup --no-terminal
+      - run: stack build --fast
+      - run: make build
+      - run:
+          name: deployment
+          command: ./deploy.sh _site
+      - save_cache:
+          name: Cache Dependencies
+          key: haskell-v1-{{ checksum "stack.yaml" }}-{{ checksum "package.yaml" }}
+          paths:
+            - "/root/.stack"
+            - ".stack-work"
