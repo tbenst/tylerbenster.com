@@ -21,7 +21,7 @@
 100 FL 51.82
 200 FL 1:56.29
 400 FR Relay 3:06.62 state record (46.64 split)
-500 FR 4:46.64 Midlakes summer league record (now broken)
+500 FR 4:42.97 Midlakes summer league record (now broken)
 
 ---
 
