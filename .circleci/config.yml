@@ -11,10 +11,10 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-        # Read about caching dependencies: https://circleci.com/docs/2.0/caching/
-        name: Restore Cached Dependencies
-        keys:
-          - haskell-v1-{{ checksum "stack.yaml" }}-{{ checksum "package.yaml" }}
+          # Read about caching dependencies: https://circleci.com/docs/2.0/caching/
+          name: Restore Cached Dependencies
+          keys:
+            - haskell-v1-{{ checksum "stack.yaml" }}-{{ checksum "package.yaml" }}
       - run:
           name: Resolve/Update Dependencies
           command: stack setup --no-terminal
