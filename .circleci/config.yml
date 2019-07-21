@@ -9,6 +9,9 @@ jobs:
       GH_NAME: Circle-CI
 
     steps:
+      - add_ssh_keys:
+        fingerprints:
+          - "6d:56:bf:3d:4b:38:05:a2:05:90:6f:a3:05:bd:7f:3d"
       - checkout
       - restore_cache:
           # Read about caching dependencies: https://circleci.com/docs/2.0/caching/
