@@ -3,9 +3,8 @@ title: Home
 no_header: True
 homepage: True
 ---
-# Hi, I'm Tyler.
 
-I'm a Neuroscience PhD candidate at Stanford, where I'm co-advised by [Karl Deisseroth](https://web.stanford.edu/group/dlab/about_pi.html) and [Shaul Druckmann](https://www.janelia.org/people/shaul-druckmann). I also work as a General Partner at Asimov Ventures, an early-stage venture capital fund focused on Frontier Technology.
+I'm a Neuroscience PhD candidate at Stanford, where I'm co-advised by [Karl Deisseroth](https://web.stanford.edu/group/dlab/about_pi.html) and [Shaul Druckmann](https://www.janelia.org/people/shaul-druckmann). I'm developing methods for reverse engineering the larval zebrafish brain, a transparent vertebrae that permits whole-brain observation and control with cellular resolution, using two-photon microscopy and holographic stimulation. I also work as a General Partner at [Asimov Ventures](https://asimovventures.com/), an early-stage venture capital fund focused on 3D printing, robotics, computing, and neurotech.
 
 ## About me
 I was born in Palo Alto and grew up just outside of Seattle on beautiful Mercer Island. At a young age, captivated by shimmering vignettes of positronic brains and matter fabricators, I fell in love with science-fiction. Following the footsteps of Isaac Asimov's protagonist Hari Seldon, I deemed myself a psychohistorian: a student of a fictional science combining psychology, history, economics, and mathematics to predict the course of future events.

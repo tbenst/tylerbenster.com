@@ -1,15 +1,28 @@
-<div class="hero">
-    <video playsinline loop muted autoplay poster="/images/drone-image.jpg"> -->
+<div class="homehero">
+    <video playsinline loop muted autoplay poster="/images/drone-image.jpg" class="max-w-none"> -->
         <source src="/media/drone-footage.mp4" type="video/mp4">
     </video>
-    <div class="flex">
+    <div class="homeflex">
         <div class="filler">
         </div>
         <h1 >Tyler Benster</h1>
         $partial("templates/nav.html")$
     </div>
 </div>
+
 <div class="section">
     <br>
-    $body$
+
+    <div class="container mx-auto max-w-screen-md prose lg:prose-lg xl:prose-xl">
+        <figure class="p-8">
+            <img class="w-96 h-96 rounded-full mx-auto" src="/images/tyler_benster_headshot.jpg" alt="Tyler Benster headshot">
+            <div class="pt-6 text-center space-y-4">
+                <figcaption>
+                    <p class="font-black text-3xl text-gray-900">Hi, I'm Tyler.</p>
+                </figcaption>
+            </div>
+        </figure>
+
+        $body$
+    </div>
 </div>

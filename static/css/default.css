@@ -29,7 +29,7 @@ img {
     max-height: 50vh;
 }
 
-.hero {
+.homehero {
     position: relative;
     width: 100vw;
     height: 100vh;
@@ -44,7 +44,7 @@ img {
 }
 
 
-.hero video {
+.homehero video {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -61,7 +61,7 @@ img {
     /*mix-blend-mode: overlay;*/
 }
 
-.hero .flex {
+.homehero .homeflex {
     /*position: absolute;*/
     display: flex;
     /*right: 0;*/
@@ -73,11 +73,11 @@ img {
     flex-direction: column;
 }
 
-.hero .flex .filler {
+.homehero .homeflex .filler {
     flex: 1;
 }
 
-.hero h1 {
+.homehero h1 {
     text-align: center;
     color: white;
     font-size: 6em;
@@ -93,7 +93,7 @@ nav {
     background-color: black;
 }
 
-.hero nav {
+.homehero nav {
     background-color: transparent;
 }
 
@@ -110,7 +110,7 @@ nav .logo {
     font-weight: bold;
 }
 
-.hero nav .item {
+.homehero nav .item {
     margin: 1em 1em 1em 1em;
     /*margin: 0em;*/
     flex-grow: 1;
@@ -123,7 +123,7 @@ nav .item a {
     text-decoration: none;
 }
 
-.hero nav .item a {
+.homehero nav .item a {
     color: white;
     font-size: 3em;
     text-decoration: none;
@@ -145,10 +145,10 @@ nav .item a:hover:after {
 	background: white;
 }
 /*
-.hero nav .item a:hover {
+.homehero nav .item a:hover {
 border-bottom: 1px solid rgba(192, 192, 192, 1);
 
-.hero nav .item a:before {
+.homehero nav .item a:before {
     text-decoration: none;
 }
 

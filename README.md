@@ -9,6 +9,26 @@ should update keys, e.g. Sauron
 # Post-run
 Once, by hand, must run `sudo certbot --nginx -d www.tylerbenster.com`
 
+## Local haskell
+```
+stack setup # if no ghc installed on system
+stack build && stack exec site clean && stack exec site watc
+```
+
+# nix-shell
+-I nixpkgs=https://github.com/NixOS/nixpkgs/archive/a15d90fad2ecef46938e3b0e141ec66503026834
+
+Initial setup:
+```
+> npm install tailwindcss
+> npm install @tailwindcss/typography
+> npm i -D postcss postcss-cli
+```
+
+auto rebuild:
+```
+> while inotifywait -e close_write tailwind.config.js; do npx tailwindcss-cli@latest build -o static/css/tailwind.css; done
+```
 
 ## References
 https://johanatan.github.io/posts/2017-04-13-hakyll-circleci.html

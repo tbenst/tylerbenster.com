@@ -35,6 +35,7 @@ main = hakyllWith config $ do
         route $ setExtension "html"
         compile $ pandocCompiler
             >>= loadAndApplyTemplate "templates/post.html"    postCtx
+            >>= loadAndApplyTemplate "templates/page.html" postCtx
             >>= loadAndApplyTemplate "templates/default.html" postCtx
             >>= relativizeUrls
 
@@ -75,12 +76,14 @@ main = hakyllWith config $ do
                     listField "posts" postCtx (return posts) `mappend`
                     defaultContext
 
-            pagesCompiler "templates/default.html" writingCtx
+            pagesCompiler "templates/page.html" writingCtx
+                >>= loadAndApplyTemplate "templates/default.html" writingCtx
                 >>= relativizeUrls
 
     match "*.markdown" $ do
         route $ setExtension "html"
         compile $ pandocCompiler
+            >>= loadAndApplyTemplate "templates/page.html" defaultContext
             >>= loadAndApplyTemplate "templates/default.html" defaultContext
             >>= relativizeUrls
 
@@ -89,6 +92,7 @@ main = hakyllWith config $ do
         compile $ do
             getResourceBody
                 >>= applyAsTemplate defaultContext
+                >>= loadAndApplyTemplate "templates/page.html" defaultContext
                 >>= loadAndApplyTemplate "templates/default.html" defaultContext
                 >>= relativizeUrls
 
