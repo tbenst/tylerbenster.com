@@ -103,8 +103,6 @@ This is true, but missing important context. ​Four people out of 21,720 for th
 
 First, regarding Guillain-Barré syndrome, ​this is a risk we include for all vaccines - the pathogenesis of GB is still poorly understood. All of the remaining potential long-term effects are also risks for patients with COVID-19.
 
-![](/images/vaccine_infographic_1.png)
-
 > Some UK health workers have experienced anaphylactic shock after receiving one dose of the approved vaccine.8
 
 ​This is true - and currently medical providers are being very cautious about giving the vaccine to people with a known history of severe allergic reactions to vaccines or injectables.
@@ -151,7 +149,11 @@ It’s much worse among those who are hospitalized. 87% are not fully symptom-fr
 
 > COULD MAKE YOU STERILE: Two prominent doctors, including the ex-head of Pfizer’s respiratory research, warn that Covid-19 vaccines contain a spike protein called syncytin-1, vital for the formation of the placenta.15 If the vaccine triggers an immune response to this protein, then female infertility, miscarriage or birth defects could result.
 
-​The COVID-19 vaccine does not contain syncytin-1.  The vaccine contains mRNA that transiently teaches the body to make the COVID-19 spike protein, a viral protein.  The COVID-19 spike protein shares some similarities to the human protein syncytin-1, however the [similarity is too small](https://virological.org/t/response-to-ncov2019-against-backdrop-of-endogenous-retroviruses/396) to cause a cross-immune reaction according to Dr. Ian Jones of the University of Reading.  If cross reactivity from COVID-19 and syncytin-1 were a concern we would see a much higher rate of miscarriage in pregnant women infected with COVID-19 or previously infected with COVID-19.  We do not see this according to Dr. Mary Minkin - a Yale OB/GYN.  Additionally, the scientists making these claims: Dr. Wolfgang Wodarg and Dr. Mike Yeadon have been previously criticized for making misleading claims about the virus and vaccine.  
+​The COVID-19 vaccine does not contain syncytin-1.  The vaccine contains mRNA that transiently teaches the body to make the COVID-19 spike protein, a viral protein.
+
+![](/images/vaccine_infographic_1.png)
+
+The COVID-19 spike protein shares some similarities to the human protein syncytin-1, however the [similarity is too small](https://virological.org/t/response-to-ncov2019-against-backdrop-of-endogenous-retroviruses/396) to cause a cross-immune reaction according to Dr. Ian Jones of the University of Reading.  If cross reactivity from COVID-19 and syncytin-1 were a concern we would see a much higher rate of miscarriage in pregnant women infected with COVID-19 or previously infected with COVID-19.  We do not see this according to Dr. Mary Minkin - a Yale OB/GYN.  Additionally, the scientists making these claims: Dr. Wolfgang Wodarg and Dr. Mike Yeadon have been previously criticized for making misleading claims about the virus and vaccine.
 
 Finally, here's the end of the email, with their citations:
 
