@@ -27,7 +27,11 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-node-
   
-    - run: nix-shell --run "echo OK"
+    - name: Cache install Nix packages
+      uses: nix-actions/cache-install@v1.0.6
+      with:
+        key: nix-${{ hashFiles('release.nix') }}
+        nix_file: 'default.nix'
 
     - name: Cache npm
       id: cache-node
