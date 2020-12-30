@@ -16,6 +16,8 @@ jobs:
       with:
         key: nix-${{ hashFiles('release.nix') }}
         nix_file: 'default.nix'
+      env:
+        ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
 
     - name: Cache npm
       id: cache-node
