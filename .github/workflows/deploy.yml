@@ -40,5 +40,7 @@ jobs:
       run: npm install tailwindcss @tailwindcss/typography && npm i -D postcss postcss-cli postcss-import autoprefixer
     - run: nix-shell --run "npx postcss static/css/entry.css -o static/master.css"
     - run: nix-build
+    - name: build site
+      run: ./result/bin/site build
     - name: deployment
       run: ./deploy.sh _site
