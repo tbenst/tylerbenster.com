@@ -7,6 +7,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2.3.4
+      with:
+        persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal token
+        fetch-depth: 0 # otherwise, you will failed to push refs to dest repo
     - uses: cachix/install-nix-action@v12
       with:
         nix_path: nixpkgs=channel:nixos-unstable
@@ -44,3 +47,9 @@ jobs:
       run: ./result/bin/site build
     - name: deployment
       run: ./deploy.sh _site
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: site
+        directory: site

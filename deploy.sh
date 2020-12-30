@@ -49,13 +49,15 @@ cp -a "../${siteSource}/." .
 git add -A
 # now commit, ignoring branch site doesn't seem to work, so trying skip
 git commit --allow-empty -m "Deploy to GitHub branch site [ci skip]"
+
+# Note: disable push now that we use Github Actions
 # and push, but send any output to /dev/null to hide anything sensitive
-git push --force --quiet origin site
-# git push --force --quiet origin site > /dev/null 2>&1
+# git push --force --quiet origin site
+# # git push --force --quiet origin site > /dev/null 2>&1
 
-# go back to where we started and remove the site git repo we made and used
-# for deployment
-cd ..
-rm -rf site
+# # go back to where we started and remove the site git repo we made and used
+# # for deployment
+# cd ..
+# rm -rf site
 
-echo "Finished Deployment!"
+# echo "Finished Deployment!"
