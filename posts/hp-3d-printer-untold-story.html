@@ -18,6 +18,9 @@
         </div>
     
         <div class="item">
+            <a href="../#about">About</a>
+        </div>
+        <div class="item">
             <a href="../writing.html">Writing</a>
         </div>
         <div class="item">
@@ -29,9 +32,9 @@
         <!-- <div class="item">
             <a href="science.html">Science</a>
         </div> -->
-        <div class="item">
-            <a href="../contact.html">Contact</a>
-        </div>
+        <!-- <div class="item">
+            <a href="/contact.html">Contact</a>
+        </div> -->
     
     <!-- </div> -->
     
@@ -40,15 +43,16 @@
             </header>
         
 
-        <main role="main">
-            <article>
-    <h1>HP's 3D printer: the Untold Story</h1>
+        <div class="container mx-auto py-6 max-w-screen-md prose lg:prose-lg xl:prose-xl">
+    <article>
+    <h1 class="pt-8">HP's 3D printer: the Untold Story</h1>
     <section class="byline">
         October 30, 2014
         
     </section>
     <section>
-        <p>If you’ve mentioned the words Hewlett Packard and 3D printing to me in the last couple months, you likely prompted a mini-rant where I proclaimed that HP was developing a <a href="http://www.lboro.ac.uk/microsites/enterprise/e2hs/technology/high-speed-sintering.html">High Speed Sintering</a> printer. When pressed on <em>why,</em> I pointed to unconfirmed rumors of a licensing deal from University of Loughborough<sup>1</sup> and Meg Whitman’s telling <a href="http://www.cnbc.com/id/101937522">quote to CNBC</a> that HP’s 3D printing effort “has a lot of shared technology with actually our toner business.”</p>
+        <div class="text-justify">
+            <p>If you’ve mentioned the words Hewlett Packard and 3D printing to me in the last couple months, you likely prompted a mini-rant where I proclaimed that HP was developing a <a href="http://www.lboro.ac.uk/microsites/enterprise/e2hs/technology/high-speed-sintering.html">High Speed Sintering</a> printer. When pressed on <em>why,</em> I pointed to unconfirmed rumors of a licensing deal from University of Loughborough<sup>1</sup> and Meg Whitman’s telling <a href="http://www.cnbc.com/id/101937522">quote to CNBC</a> that HP’s 3D printing effort “has a lot of shared technology with actually our toner business.”</p>
 <p>Now that the announcement has been made–with sufficient technical detail to confirm that Multi Jet Fusion<sup>TM</sup> uses the same methods as High Speed Sintering—I’d like to tell the story missing from the current media narrative before diving into the technology</p>
 <h2 id="hp-technology-powers-the-three-dimensional-printer">HP technology Powers the “Three Dimensional Printer”</h2>
 <p>In the late 1980s and early 1990s, a number of independent inventors came up with various methods for additively creating parts given a CAD model. Although the earliest efforts used exotic techniques with lasers or extruders, a group of researchers out of MIT cleverly utilized existing hardware from inkjet printing. Using a binder specially designed to flow through an HP inkjet head, the researchers demonstrated a device that could create parts by alternating layers of plaster and binder. Thus, Z Corporation was born, and in 1992 a trademark was filed for <a href="http://tmsearch.uspto.gov/bin/showfield?f=doc&amp;state=4810:dxr1l.2.3">THREE DIMENSIONAL PRINTING</a>. The technology really was standard inkjet printing with an extra Z dimension thrown in; hence the phrase 3D printing. A couple years later, HP inkjet heads were powering the earliest commercial 3D printers.<sup>2</sup></p>
@@ -67,29 +71,27 @@
 <p>In a single word: breakthrough. The first commercially available high speed sintering printer on the market. Let’s take a closer look at MJF (all 3D printing technologies have to have a TLA<sup>6</sup>).</p>
 <p>SLS is to vector printing as MJF is to raster printing. Both technologies start by depositing a fine layer of powder and selectively melts each layer to the previous layer. With SLS, a laser modulated by mirrors sinters the powder, and requires a sealed and heated build chamber. With MJF, a Thermal Inkjet array deposits a liquid thermoplastic onto the powder bed, which is subsequently solidified by an energy source. <img src="../images/mjf-diagram.png" alt="diagram 1" /></p>
 <p>Curiously, the roller has an energy source on both sides. Presumably, only the leading energy source will be active, and the second energy source is so the arm is bi-directional. Likewise, the inkjet array is likely bi-directional as well. Although the energy source is not specified, my guess is an infrared lamp. If you’ve watched SLS in action before, you can imagine how this design is 10x faster!</p>
-<div class="figure">
-<img src="../images/mjf-diagram-2.png" alt="diagram 2" />
-<p class="caption">diagram 2</p>
-</div>
+<figure>
+<img src="../images/mjf-diagram-2.png" alt="diagram 2" /><figcaption aria-hidden="true">diagram 2</figcaption>
+</figure>
 <p>The jetted liquid fills the voids between particles, creating a denser part than SLS. Depending on the viscosity of the liquid and the time difference between deposition &amp; radiation, the distance the thermal ink travels may vary. Insufficient time or too much viscosity may result in insufficient penetration to layers underneath and thus lower ductility. If the inkjet arm moves at a consistent rate despite per-layer complexity, the center of the build platform will have a consistent amount of time between deposition &amp; radiation, while the edges will have the most extreme variations in time, with a voxel in the corner alternating between diff_t<sub>min</sub> on even layers and diff_t<sub>max</sub> on odd layers. Until we have the machine, this is a purely speculative effect.</p>
 <p>HP also claims that more powder can be recycled as a result of lower thermal stress. Hurray! Although, note that HP will probably be selling the ink and not the powder, so you can guess the relative price points. We will also need to see how the detailing agent will affect recycling. This claim may suggest that the build chamber is unheated. Waiting for build chambers to cool is a major component of build time with SLS. It’s too early to tell, but a potential downside of this may be increased part warping. Naturally, the parts that are being shown off are from prototype printers and warping is not a unique problem to this process.</p>
-<div class="figure">
-<img src="../images/mjf-warping.png" alt="Apparent warping on edges of sample part" />
-<p class="caption">Apparent warping on edges of sample part</p>
-</div>
+<figure>
+<img src="../images/mjf-warping.png" alt="Apparent warping on edges of sample part" /><figcaption aria-hidden="true">Apparent warping on edges of sample part</figcaption>
+</figure>
 <p>HP also presents a compelling roadmap for the technology. True full-color printing with functional parts. Variable material properties. It’s like ZCorp + Objet + SLS all in one! Kidding aside, it’s a seriously compelling vision and I’m a believer. 10x better could prove to an understatement when functional increases are weighed in with the speed increases.</p>
 <h2 id="so-whats-the-catch">So what’s the catch?</h2>
 <blockquote>
 <p>Availability of the end-to-end HP 3D printing system is planned in 2016,<sup>(4)</sup> as the product and HP partners’ solutions meet the requirements and quality standards that HP customers expect.</p>
 </blockquote>
 <blockquote>
-<ol start="4" style="list-style-type: decimal">
+<ol start="4" type="1">
 <li>Availability is subject to change.</li>
 </ol>
 </blockquote>
 <p>HP gave us a rare glimse into the future of 3D printing. Just like the Xerox Star did for computing… Here’s to hoping that HP Inc gives the new 3D printing division the requisite autonomy to go to market before the winds of change start blowing.</p>
 <hr />
-<ol style="list-style-type: decimal">
+<ol type="1">
 <li><p>I have yet to confirm if HP licensed the IP or worked around it</p></li>
 <li><p>Today, “3D printing” is an umbrella term referring to a multitude of technologies, including SLA, SLS, FDM, etc. By this colloquial usage, the Z Corp printers were not the earliest, but I’ll stick with the time-period terminology</p></li>
 <li><p>I had one of the earliest kits sold by BitsFromBytes. The kit suffered from a number of problems, which likely contributed to Makerbot’s eclipse despite launching several months later. Both companies used off-the-shelf components where possible and laser cutting for specialized parts.</p></li>
@@ -97,15 +99,14 @@
 <li><p>While much of this progress was initially concentrated in hackerspaces and resulted in advances like deltabots, printing field’s metal, new materials etc., a new wave of commercial spinouts have come in the last two years. Many are entrepreneurs following a manifest destiny mindset with gold in their eyes yet no tools in their hands. I’ve started calling these often kickstarted companies as RipRaps: Ripped off design, cRappy prints, and would encourage you to do the same!</p></li>
 <li><p>Three Letter Acronym</p></li>
 </ol>
-
+        </div>
     <section>
 
     </section>
     <br />
     <a href="../writing.html">&larr; Back to Writing</a>
 </article>
-
-        </main>
+</div>
 
     </body>
 </html>

@@ -11,18 +11,20 @@
         
         
 
-        <main role="main">
-            <div class="hero">
-    <video playsinline loop muted autoplay poster="./images/drone-image.jpg"> -->
+        <div class="homehero">
+    <video playsinline loop muted autoplay poster="./images/drone-image.jpg" class="max-w-none"> -->
         <source src="./media/drone-footage.mp4" type="video/mp4">
     </video>
-    <div class="flex">
+    <div class="homeflex">
         <div class="filler">
         </div>
-        <h1>Tyler Benster</h1>
+        <h1 id="about">Tyler Benster</h1>
         <nav>
     
     
+        <div class="item">
+            <a href="./#about">About</a>
+        </div>
         <div class="item">
             <a href="./writing.html">Writing</a>
         </div>
@@ -35,9 +37,9 @@
         <!-- <div class="item">
             <a href="science.html">Science</a>
         </div> -->
-        <div class="item">
-            <a href="./contact.html">Contact</a>
-        </div>
+        <!-- <div class="item">
+            <a href="/contact.html">Contact</a>
+        </div> -->
     
     <!-- </div> -->
     
@@ -45,18 +47,32 @@
 
     </div>
 </div>
+
 <div class="section">
     <br>
-    <h1 id="hi-im-tyler.">Hi, I’m Tyler.</h1>
-<p>I’m a Neuroscience PhD candidate at Stanford, where I’m co-advised by <a href="https://web.stanford.edu/group/dlab/about_pi.html">Karl Deisseroth</a> and <a href="https://www.janelia.org/people/shaul-druckmann">Shaul Druckmann</a>. I also work as a General Partner at Asimov Ventures, an early-stage venture capital fund focused on Frontier Technology.</p>
-<h2 id="about-me">About me</h2>
+
+    <div class="container mx-auto max-w-screen-md prose lg:prose-lg xl:prose-xl">
+        <figure class="pt-8">
+            <img class="w-96 h-96 rounded-full mx-auto" src="./images/tyler_benster_headshot.jpg" alt="Tyler Benster headshot">
+            <div class="pt-6 text-center space-y-4">
+                <figcaption>
+                    <h2 class="font-black text-3xl text-gray-900">Hi, I'm Tyler.</h2>
+                </figcaption>
+            </div>
+        </figure>
+        <div class="text-justify pb-8">
+            <p>I’m a Neuroscience PhD candidate at Stanford, where I’m co-advised by <a href="https://web.stanford.edu/group/dlab/about_pi.html">Karl Deisseroth</a> and <a href="https://www.janelia.org/people/shaul-druckmann">Shaul Druckmann</a>. I’m developing methods for reverse engineering the larval zebrafish brain, a transparent vertebrae that permits whole-brain observation and control with cellular resolution, using two-photon microscopy and holographic stimulation. I also work as a General Partner at <a href="https://asimovventures.com/">Asimov Ventures</a>, an early-stage venture capital fund focused on 3D printing, robotics, computing, and neurotech.</p>
+<h3 class="font-black text-3xl text-gray-900 text-center" id="about-me">About me</h3>
 <p>I was born in Palo Alto and grew up just outside of Seattle on beautiful Mercer Island. At a young age, captivated by shimmering vignettes of positronic brains and matter fabricators, I fell in love with science-fiction. Following the footsteps of Isaac Asimov’s protagonist Hari Seldon, I deemed myself a psychohistorian: a student of a fictional science combining psychology, history, economics, and mathematics to predict the course of future events.</p>
 <p>Upon matriculation at Brown University, I approximated this field by concentrating in applied mathematics and economics. A few friends and I took a stab at matter fabrication with Azavy, a platform for distributed 3D printing. After tens of dollars in revenue, we shuttered the product and I became a consultant. I spent three years scouring the globe for the latest developments, and used my newfound knowledge to chair 3D Printing conferences in a dozen countries, and consult organizations like Lowe’s, HP, Stratasys, and the US Patent &amp; Trademark Office.</p>
 <p>Yet once acquired, I found little purpose in this expertise <em>per se</em>. I came to realize that my greatest moments of joy and meaning were rooted in the act of discovering rather than that of knowing. As I surveyed the frontier, I conceived that Neuroscience and Neurotechnology would have the greatest impact on humanity during my lifetime. Thus, I joined Van Gelder Lab at UW Medicine to pursue research on vision restoration, and was humbled to join the Neuroscience PhD program at Stanford in Fall 2017.</p>
 <p>Outside of Neuroscience and 3D printing, I love athletics – see my <a href="./best-times.html">best times</a>. In high school I was a Washington state record holder and All-America in swimming, and went on to score points at two Ivy League Championships. Halfway through college I switched to running. I helped set a school record (4x800m relay), placed third at the Ivy League Heptagonal championship (800m), and qualified for the NCAA Division 1 East Preliminary Round of the national championship (800M–1:49.72). More recently, I ran my first marathon and helped my sister to a Boston Marathon qualifying time (Go Lindsay!).</p>
+<h3 class="font-black text-3xl text-gray-900 text-center" id="contact">Contact</h3>
+<p>info@tylerbenster.com</p>
+        </div>
+    </div>
 </div>
 
-        </main>
 
     </body>
 </html>
