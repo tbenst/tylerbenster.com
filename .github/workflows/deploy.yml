@@ -31,8 +31,7 @@ jobs:
     - name: add npm pkgs
       if: steps.cache-node.outputs.cache-hit != 'true'
       run: npm install tailwindcss @tailwindcss/typography && npm i -D postcss postcss-cli postcss-import autoprefixer
-    - run: nix-shell --run "npx postcss static/css/entry.css -o static/master.css"
-    - run: nix-build
+    - run: nix-shell shell.nix --run "npx postcss static/css/entry.css -o static/master.css"
     - name: build site
       run: ./result/bin/site build
     - name: commit
