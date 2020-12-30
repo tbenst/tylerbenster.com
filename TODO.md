@@ -1,0 +1,2 @@
+- install https://github.com/umputun/remark42
+- setup Amazon SES mailserver..?

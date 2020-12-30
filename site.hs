@@ -8,22 +8,6 @@ import  System.Process     (system)
 --------------------------------------------------------------------------------
 main :: IO ()
 main = hakyllWith config $ do
-    match "images/*" $ do
-        route   idRoute
-        compile copyFileCompiler
-
-    match "media/*" $ do
-        route   idRoute
-        compile copyFileCompiler
-
-    match "css/*" $ do
-        compile compressCssCompiler
-
-    create ["master.css"] $ do
-        route idRoute
-        compile $ do
-            items <- loadAll "css/*" :: Compiler [Item String]
-            makeItem $ concat $ map itemBody items
 
     -- match (fromList ["about.rst", "contact.markdown"]) $ do
     --     route   $ setExtension "html"
@@ -67,6 +51,8 @@ main = hakyllWith config $ do
                 >>= loadAndApplyTemplate "templates/default.html" homepageCtx
                 >>= relativizeUrls
 
+    match "papers/*.bib" $ compile biblioCompiler
+    match "papers/*.csl" $ compile cslCompiler
 
     match "writing.markdown" $ do
         route $ setExtension "html"
@@ -75,8 +61,10 @@ main = hakyllWith config $ do
             let writingCtx =
                     listField "posts" postCtx (return posts) `mappend`
                     defaultContext
-
-            pagesCompiler "templates/page.html" writingCtx
+            pandocBiblioCompiler "papers/blog.csl" "papers/research.bib"
+                >>= applyAsTemplate writingCtx
+                >>= renderPandoc
+                >>= loadAndApplyTemplate "templates/page.html" writingCtx
                 >>= loadAndApplyTemplate "templates/default.html" writingCtx
                 >>= relativizeUrls
 
@@ -97,6 +85,14 @@ main = hakyllWith config $ do
                 >>= relativizeUrls
 
     match "templates/*" $ compile templateBodyCompiler
+
+    -- copy all static content
+    -- https://robertwpearce.com/hakyll-pt-4-copying-static-files-for-your-build.html
+    match (  "master.css"
+        .||. "images/*"
+        .||. "media/*") $ do
+        route   idRoute
+        compile copyFileCompiler
 
 
 --------------------------------------------------------------------------------

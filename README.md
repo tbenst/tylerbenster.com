@@ -11,23 +11,41 @@ Once, by hand, must run `sudo certbot --nginx -d www.tylerbenster.com`
 
 ## Local haskell
 ```
-stack setup # if no ghc installed on system
-stack build && stack exec site clean && stack exec site watc
+nix-build  && result/bin/site clean && result/bin/site watch
 ```
 
-# nix-shell
--I nixpkgs=https://github.com/NixOS/nixpkgs/archive/a15d90fad2ecef46938e3b0e141ec66503026834
+### nix / local cabal
+`cabal install filepath --dry-run` then add to *.cabal file. Nix will install/build
+### stack (deprecated)
+```
+stack setup # if no ghc installed on system
+stack build && stack exec site clean && stack exec site watch
+```
 
-Initial setup:
+## Tailwind CSS
+nix-shell -I nixpkgs=https://github.com/NixOS/nixpkgs/archive/a15d90fad2ecef46938e3b0e141ec66503026834
+
+## niv / nix
+https://dev.to/rpearce/hakyll-pt-6-pure-builds-with-nix-4hb6
+```
+niv init
+niv update nixpkgs -o NixOS -r nixpkgs -b nixos-20.09
+```
+
+### Initial setup:
 ```
 > npm install tailwindcss
 > npm install @tailwindcss/typography
-> npm i -D postcss postcss-cli
+> npm i -D postcss postcss-cli postcss-import autoprefixer
 ```
 
-auto rebuild:
+### auto rebuild:
 ```
+# using tailwind-cli
 > while inotifywait -e close_write tailwind.config.js; do npx tailwindcss-cli@latest build -o static/css/tailwind.css; done
+# using postcss-cli
+> nix-shell
+$ npx postcss --watch static/css/entry.css -o static/master.css -v
 ```
 
 ## References
@@ -38,6 +56,11 @@ https://github.com/eldarlabs/ghpages-deploy-script
 
 https://circleci.com/docs/1.0/config-sample/
 
+## bibliography
+use https://www.doi2bib.org/ and paste reference into papers/papers.bib
+```
+pandoc chem.bib -s -f biblatex -t markdown
+```
 
 ## Dockerfile backups
 https://hub.docker.com/r/futtetennista/hakyll

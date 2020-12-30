@@ -13,13 +13,15 @@ module.exports = {
                 fontWeight: '300',
             },
             p: {
-              'text-align': 'justify',
+              // 'text-align': 'justify',
             },
-            '.figure': {
+            figure: {
               img: {
-                'margin': 'auto', // center
+                'margin-left': 'auto', // center
+                'display' : 'block',
+                'margin-right': 'auto', // center
               },
-              p: {
+              figcaption: {
                 'text-align': 'center', // center
                 'margin-top': '0px', // no gap from photo
                 'color': theme('colors.gray.500'),

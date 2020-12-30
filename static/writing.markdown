@@ -1,6 +1,12 @@
 ---
 title: Writing
 ---
+## Peer reviewed
+<div class="text-base">
+1. [@Hll2019]
+1. [@Andalman2019]
+</div>
+
 ## Blog
 $partial("templates/post-list.html")$
 
@@ -17,6 +23,3 @@ $partial("templates/post-list.html")$
 - Tyler Benster. 3D Printing a Masterpiece: Gaudi's La Sagrada
     Familia. *3D Printing World Magazine*, 2015.
 - Terry Wohlers, et al. Wohlers Report 2014. *Wohlers Associates*.
-
-## Subscribe
-$partial("templates/mailchimp.html")$

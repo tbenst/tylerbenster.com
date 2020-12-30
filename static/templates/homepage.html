@@ -5,7 +5,7 @@
     <div class="homeflex">
         <div class="filler">
         </div>
-        <h1 >Tyler Benster</h1>
+        <h1 id="about">Tyler Benster</h1>
         $partial("templates/nav.html")$
     </div>
 </div>
@@ -14,15 +14,16 @@
     <br>
 
     <div class="container mx-auto max-w-screen-md prose lg:prose-lg xl:prose-xl">
-        <figure class="p-8">
+        <figure class="pt-8">
             <img class="w-96 h-96 rounded-full mx-auto" src="/images/tyler_benster_headshot.jpg" alt="Tyler Benster headshot">
             <div class="pt-6 text-center space-y-4">
                 <figcaption>
-                    <p class="font-black text-3xl text-gray-900">Hi, I'm Tyler.</p>
+                    <h2 class="font-black text-3xl text-gray-900">Hi, I'm Tyler.</h2>
                 </figcaption>
             </div>
         </figure>
-
-        $body$
+        <div class="text-justify pb-8">
+            $body$
+        </div>
     </div>
 </div>

@@ -1,5 +1,5 @@
-<article class="prose lg:prose-lg xl:prose-xl">
-    <h1>$title$</h1>
+<article>
+    <h1 class="pt-8">$title$</h1>
     <section class="byline">
         $date$
         $if(author)$
@@ -7,8 +7,9 @@
         $endif$
     </section>
     <section>
-        $body$
-
+        <div class="text-justify">
+            $body$
+        </div>
     <section>
 
     </section>
