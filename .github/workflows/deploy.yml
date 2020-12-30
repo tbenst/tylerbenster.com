@@ -13,8 +13,8 @@ jobs:
  
     - name: Cache install Nix packages
       uses: nix-actions/cache-install@v1.0.6
-      with:
-        key: nix-${{ hashFiles('release.nix') }}
+      with: # update key to invalidate cache
+        key: nix-v2-${{ hashFiles('release.nix') }}
         nix_file: 'release.nix'
       env:
         ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
