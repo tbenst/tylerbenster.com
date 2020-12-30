@@ -8,14 +8,14 @@ Once, by hand, must run `sudo certbot --nginx -d www.tylerbenster.com`
 ## Local haskell
 ```
 nix-build  && result/bin/site clean && result/bin/site watch
+
+# newer
+./result/bin/site watch --no-server
+nix-shell shell.nix --run "npx postcss --watch static/css/entry.css -o static/master.css -v"
 ```
 
 ### nix / local cabal
 `cabal install filepath --dry-run` then add to *.cabal file. Nix will install/build
-### stack (deprecated)
-```
-stack setup # if no ghc installed on system
-stack build && stack exec site clean && stack exec site watch
 ```
 
 ## Tailwind CSS

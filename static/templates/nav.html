@@ -1,18 +1,21 @@
-<nav>
+<div class="text-white text-center">
     $if(homepage)$
+    <nav class="bg-transparent py-4">
+    <div class="flex flex-row text-2xl sm:text-4xl md:text-6xl lg:text-7xl">
     $else$
-    <!-- <div class="flex"> -->
-        <div class="item logo">
+    <nav class="bg-black py-4">
+    <div class="flex flex-row items-baseline text-lg sm:text-1xl md:text-2xl lg:text-3xl">
+        <div class="item flex-grow float-left ml-2 text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
             <a href="/">Tyler Benster</a>
         </div>
     $endif$
-        <div class="item">
+        <div class="item flex-grow">
             <a href="/#about">About</a>
         </div>
-        <div class="item">
+        <div class="item flex-grow">
             <a href="/writing.html">Writing</a>
         </div>
-        <div class="item">
+        <div class="item flex-grow">
             <a href="/speaking.html">Speaking</a>
         </div>
         <!-- <div class="item">
@@ -26,6 +29,7 @@
         </div> -->
     $if(no_logo)$
     $else$
-    <!-- </div> -->
     $endif$
+    </div>
 </nav>
+</div>

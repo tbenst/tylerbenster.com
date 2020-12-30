@@ -13,7 +13,7 @@ main = hakyllWith config $ do
     --     route   $ setExtension "html"
     --     compile $ pandocCompiler
     --         >>= loadAndApplyTemplate "templates/default.html" defaultContext
-    --         >>= relativizeUrls
+            -- >>= relativizeUrls
 
     match "posts/*" $ do
         route $ setExtension "html"
@@ -21,7 +21,7 @@ main = hakyllWith config $ do
             >>= loadAndApplyTemplate "templates/post.html"    postCtx
             >>= loadAndApplyTemplate "templates/page.html" postCtx
             >>= loadAndApplyTemplate "templates/default.html" postCtx
-            >>= relativizeUrls
+            -- >>= relativizeUrls
 
     create ["blog.html"] $ do
         route idRoute
@@ -35,7 +35,7 @@ main = hakyllWith config $ do
             makeItem ""
                 >>= loadAndApplyTemplate "templates/archive.html" archiveCtx
                 >>= loadAndApplyTemplate "templates/default.html" archiveCtx
-                >>= relativizeUrls
+                -- >>= relativizeUrls
 
     match "homepage.markdown" $ do
         route $ constRoute "index.html"
@@ -49,7 +49,7 @@ main = hakyllWith config $ do
             pandocCompiler
                 >>= loadAndApplyTemplate "templates/homepage.html" homepageCtx
                 >>= loadAndApplyTemplate "templates/default.html" homepageCtx
-                >>= relativizeUrls
+                -- >>= relativizeUrls
 
     match "papers/*.bib" $ compile biblioCompiler
     match "papers/*.csl" $ compile cslCompiler
@@ -66,14 +66,14 @@ main = hakyllWith config $ do
                 >>= renderPandoc
                 >>= loadAndApplyTemplate "templates/page.html" writingCtx
                 >>= loadAndApplyTemplate "templates/default.html" writingCtx
-                >>= relativizeUrls
+                -- >>= relativizeUrls
 
     match "*.markdown" $ do
         route $ setExtension "html"
         compile $ pandocCompiler
             >>= loadAndApplyTemplate "templates/page.html" defaultContext
             >>= loadAndApplyTemplate "templates/default.html" defaultContext
-            >>= relativizeUrls
+            -- >>= relativizeUrls
 
     match "*.html" $ do
         route idRoute
@@ -82,7 +82,7 @@ main = hakyllWith config $ do
                 >>= applyAsTemplate defaultContext
                 >>= loadAndApplyTemplate "templates/page.html" defaultContext
                 >>= loadAndApplyTemplate "templates/default.html" defaultContext
-                >>= relativizeUrls
+                -- >>= relativizeUrls
 
     match "templates/*" $ compile templateBodyCompiler
 
