@@ -32464,10 +32464,6 @@ video {
           animation: bounce 1s infinite;
 }
 
-/* header {
-    margin-bottom: 0.5em
-} */
-
 .homehero {
   position: relative;
   width: 100vw;
@@ -32514,50 +32510,6 @@ video {
 .homehero .homeflex .filler {
   flex: 1;
 }
-
-/* nav {
-    display: flex;
-    flex-flow: row wrap;
-    align-items: baseline;
-    text-align: center;
-    background-color: black;
-} */
-
-/* .homehero nav {
-    background-color: transparent;
-} */
-
-/* nav .item {
-    padding: 0;
-    flex-grow: 1;
-    /*flex: 1;* /
-} */
-
-/* nav .logo {
-    margin: 0.5em 0 0 0;
-    font-size: 1.8em;
-    float: left;
-    font-weight: bold;
-} */
-
-/* .homehero nav .item {
-    margin: 1em 1em 1em 1em;
-    /*margin: 0em;* /
-    flex-grow: 1;
-    /*flex: 1;* /
-} */
-
-/* nav .item a {
-    color: white;
-    font-size: 1.5em;
-    text-decoration: none;
-}
-
-.homehero nav .item a {
-    color: white;
-    font-size: 3em;
-    text-decoration: none;
-} */
 
 nav .item a:after {
   content: '';
