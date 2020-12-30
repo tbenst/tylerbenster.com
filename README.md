@@ -3,9 +3,6 @@
 
 Edit the master branch only; CircleCI will build and push to Site, which is then hosted.
 
-# pre-run
-should update keys, e.g. Sauron
-
 # Post-run
 Once, by hand, must run `sudo certbot --nginx -d www.tylerbenster.com`
 
