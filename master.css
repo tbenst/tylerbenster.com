@@ -929,6 +929,13 @@ video {
   margin-bottom: 0;
 }
 
+.prose .byline {
+  color: #374151;
+  font-size: 1em;
+  font-style: italic;
+  margin-bottom: 0.5rem;
+}
+
 .prose-sm {
   font-size: 0.875rem;
   line-height: 1.7142857;
@@ -32531,17 +32538,6 @@ nav .item a:hover:after {
   background-color: white;
 }
 
-article .byline {
-  color: #555;
-  font-size: 1em;
-  font-style: italic;
-  margin-bottom: 0.5em;
-}
-
-form {
-  padding: 0;
-}
-
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;
@@ -32924,6 +32920,13 @@ form {
 
   .sm\:prose > :last-child {
     margin-bottom: 0;
+  }
+
+  .prose .sm\:byline {
+    color: #374151;
+    font-size: 1em;
+    font-style: italic;
+    margin-bottom: 0.5rem;
   }
 
   .sm\:prose-sm {
@@ -64767,6 +64770,13 @@ form {
     margin-bottom: 0;
   }
 
+  .prose .md\:byline {
+    color: #374151;
+    font-size: 1em;
+    font-style: italic;
+    margin-bottom: 0.5rem;
+  }
+
   .md\:prose-sm {
     font-size: 0.875rem;
     line-height: 1.7142857;
@@ -96606,6 +96616,13 @@ form {
 
   .lg\:prose > :last-child {
     margin-bottom: 0;
+  }
+
+  .prose .lg\:byline {
+    color: #374151;
+    font-size: 1em;
+    font-style: italic;
+    margin-bottom: 0.5rem;
   }
 
   .lg\:prose-sm {
@@ -128449,6 +128466,13 @@ form {
     margin-bottom: 0;
   }
 
+  .prose .xl\:byline {
+    color: #374151;
+    font-size: 1em;
+    font-style: italic;
+    margin-bottom: 0.5rem;
+  }
+
   .xl\:prose-sm {
     font-size: 0.875rem;
     line-height: 1.7142857;
@@ -160288,6 +160312,13 @@ form {
 
   .\32xl\:prose > :last-child {
     margin-bottom: 0;
+  }
+
+  .prose .\32xl\:byline {
+    color: #374151;
+    font-size: 1em;
+    font-style: italic;
+    margin-bottom: 0.5rem;
   }
 
   .\32xl\:prose-sm {
