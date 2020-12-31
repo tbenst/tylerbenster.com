@@ -27,6 +27,12 @@ module.exports = {
                 'color': theme('colors.gray.500'),
               },
             },
+            '.byline': {
+                'color': theme('colors.gray.700'),
+                'font-size': '1em',
+                'font-style': 'italic',
+                'margin-bottom': theme('spacing.2'),
+            }
           },
         },
       }),

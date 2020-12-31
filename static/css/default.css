@@ -63,15 +63,3 @@ nav .item a:hover:after {
     position: relative;
     background-color: white;
 }
-
-article .byline {
-    color: #555;
-    font-size: 1em;
-    font-style: italic;
-    margin-bottom: 0.5em;
-}
-
-
-form {
-    padding: 0;
-}
