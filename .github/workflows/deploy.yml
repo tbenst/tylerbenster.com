@@ -27,17 +27,7 @@ jobs:
         key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
         restore-keys: |
           ${{ runner.os }}-node-
-  
-    - name: Cache npm
-      id: cache-node
-      uses: actions/cache@v2
-      with:
-        path: ~/.npm
-        key: ${{ runner.os }}-node-v2-${{ hashFiles('**/package-lock.json') }}
-        restore-keys: |
-          ${{ runner.os }}-node-v2-
     - name: add npm pkgs
-      if: steps.cache-node.outputs.cache-hit != 'true'
       run: nix-shell --run "npm install tailwindcss @tailwindcss/typography && npm i -D postcss postcss-cli postcss-import autoprefixer"
     - run: nix-shell --run "npx postcss static/css/entry.css -o static/master.css"
     - run: nix-build
