@@ -12770,6 +12770,12 @@ video {
   height: 100vh;
 }
 
+@supports (-webkit-touch-callout: none) {
+	.h-screen {
+		height: -webkit-fill-available;
+	}
+}
+
 .text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
@@ -15189,6 +15195,12 @@ video {
   max-height: 100vh;
 }
 
+@supports (-webkit-touch-callout: none) {
+	.max-h-screen {
+		max-height: -webkit-fill-available;
+	}
+}
+
 .max-w-0 {
   max-width: 0rem;
 }
@@ -15291,6 +15303,12 @@ video {
 
 .min-h-screen {
   min-height: 100vh;
+}
+
+@supports (-webkit-touch-callout: none) {
+	.min-h-screen {
+		min-height: -webkit-fill-available;
+	}
 }
 
 .min-w-0 {
@@ -32485,6 +32503,12 @@ video {
     );
 }
 
+@supports (-webkit-touch-callout: none) {
+	.homehero {
+		height: -webkit-fill-available;
+	}
+}
+
 .homehero video {
   position: fixed;
   top: 50%;
@@ -32514,6 +32538,12 @@ video {
   flex-direction: column;
 }
 
+@supports (-webkit-touch-callout: none) {
+	.homehero .homeflex {
+		min-height: -webkit-fill-available;
+	}
+}
+
 .homehero .homeflex .filler {
   flex: 1;
 }
@@ -32536,6 +32566,32 @@ nav .item a:hover:after {
 .section {
   position: relative;
   background-color: white;
+}
+
+.hyphen {
+  -webkit-hyphens: auto;
+  -webkit-hyphenate-limit-before: 3;
+  -webkit-hyphenate-limit-after: 3;
+  -webkit-hyphenate-limit-chars: 6 3 3;
+  -webkit-hyphenate-limit-lines: 2;
+  -webkit-hyphenate-limit-last: always;
+  -webkit-hyphenate-limit-zone: 8%;
+  -moz-hyphens: auto;
+  -moz-hyphenate-limit-chars: 6 3 3;
+  -moz-hyphenate-limit-lines: 2;
+  -moz-hyphenate-limit-last: always;
+  -moz-hyphenate-limit-zone: 8%;
+  -ms-hyphens: auto;
+  -ms-hyphenate-limit-chars: 6 3 3;
+  -ms-hyphenate-limit-lines: 2;
+  -ms-hyphenate-limit-last: always;
+  -ms-hyphenate-limit-zone: 8%;
+  hyphens: auto;
+  hyphenate-limit-chars: 6 3 3;
+  hyphenate-limit-lines: 2;
+  hyphenate-limit-last: always;
+  hyphenate-limit-zone: 8%;
+  text-justify: inter-character;
 }
 
 @media (min-width: 640px) {
@@ -44763,6 +44819,12 @@ nav .item a:hover:after {
     height: 100vh;
   }
 
+  @supports (-webkit-touch-callout: none) {
+		.sm\:h-screen {
+			height: -webkit-fill-available;
+		}
+	}
+
   .sm\:text-xs {
     font-size: 0.75rem;
     line-height: 1rem;
@@ -47182,6 +47244,12 @@ nav .item a:hover:after {
     max-height: 100vh;
   }
 
+  @supports (-webkit-touch-callout: none) {
+		.sm\:max-h-screen {
+			max-height: -webkit-fill-available;
+		}
+	}
+
   .sm\:max-w-0 {
     max-width: 0rem;
   }
@@ -47285,6 +47353,12 @@ nav .item a:hover:after {
   .sm\:min-h-screen {
     min-height: 100vh;
   }
+
+  @supports (-webkit-touch-callout: none) {
+		.sm\:min-h-screen {
+			min-height: -webkit-fill-available;
+		}
+	}
 
   .sm\:min-w-0 {
     min-width: 0px;
@@ -76611,6 +76685,12 @@ nav .item a:hover:after {
     height: 100vh;
   }
 
+  @supports (-webkit-touch-callout: none) {
+		.md\:h-screen {
+			height: -webkit-fill-available;
+		}
+	}
+
   .md\:text-xs {
     font-size: 0.75rem;
     line-height: 1rem;
@@ -79030,6 +79110,12 @@ nav .item a:hover:after {
     max-height: 100vh;
   }
 
+  @supports (-webkit-touch-callout: none) {
+		.md\:max-h-screen {
+			max-height: -webkit-fill-available;
+		}
+	}
+
   .md\:max-w-0 {
     max-width: 0rem;
   }
@@ -79133,6 +79219,12 @@ nav .item a:hover:after {
   .md\:min-h-screen {
     min-height: 100vh;
   }
+
+  @supports (-webkit-touch-callout: none) {
+		.md\:min-h-screen {
+			min-height: -webkit-fill-available;
+		}
+	}
 
   .md\:min-w-0 {
     min-width: 0px;
@@ -108459,6 +108551,12 @@ nav .item a:hover:after {
     height: 100vh;
   }
 
+  @supports (-webkit-touch-callout: none) {
+		.lg\:h-screen {
+			height: -webkit-fill-available;
+		}
+	}
+
   .lg\:text-xs {
     font-size: 0.75rem;
     line-height: 1rem;
@@ -110878,6 +110976,12 @@ nav .item a:hover:after {
     max-height: 100vh;
   }
 
+  @supports (-webkit-touch-callout: none) {
+		.lg\:max-h-screen {
+			max-height: -webkit-fill-available;
+		}
+	}
+
   .lg\:max-w-0 {
     max-width: 0rem;
   }
@@ -110981,6 +111085,12 @@ nav .item a:hover:after {
   .lg\:min-h-screen {
     min-height: 100vh;
   }
+
+  @supports (-webkit-touch-callout: none) {
+		.lg\:min-h-screen {
+			min-height: -webkit-fill-available;
+		}
+	}
 
   .lg\:min-w-0 {
     min-width: 0px;
@@ -140307,6 +140417,12 @@ nav .item a:hover:after {
     height: 100vh;
   }
 
+  @supports (-webkit-touch-callout: none) {
+		.xl\:h-screen {
+			height: -webkit-fill-available;
+		}
+	}
+
   .xl\:text-xs {
     font-size: 0.75rem;
     line-height: 1rem;
@@ -142726,6 +142842,12 @@ nav .item a:hover:after {
     max-height: 100vh;
   }
 
+  @supports (-webkit-touch-callout: none) {
+		.xl\:max-h-screen {
+			max-height: -webkit-fill-available;
+		}
+	}
+
   .xl\:max-w-0 {
     max-width: 0rem;
   }
@@ -142829,6 +142951,12 @@ nav .item a:hover:after {
   .xl\:min-h-screen {
     min-height: 100vh;
   }
+
+  @supports (-webkit-touch-callout: none) {
+		.xl\:min-h-screen {
+			min-height: -webkit-fill-available;
+		}
+	}
 
   .xl\:min-w-0 {
     min-width: 0px;
@@ -172155,6 +172283,12 @@ nav .item a:hover:after {
     height: 100vh;
   }
 
+  @supports (-webkit-touch-callout: none) {
+		.\32xl\:h-screen {
+			height: -webkit-fill-available;
+		}
+	}
+
   .\32xl\:text-xs {
     font-size: 0.75rem;
     line-height: 1rem;
@@ -174574,6 +174708,12 @@ nav .item a:hover:after {
     max-height: 100vh;
   }
 
+  @supports (-webkit-touch-callout: none) {
+		.\32xl\:max-h-screen {
+			max-height: -webkit-fill-available;
+		}
+	}
+
   .\32xl\:max-w-0 {
     max-width: 0rem;
   }
@@ -174677,6 +174817,12 @@ nav .item a:hover:after {
   .\32xl\:min-h-screen {
     min-height: 100vh;
   }
+
+  @supports (-webkit-touch-callout: none) {
+		.\32xl\:min-h-screen {
+			min-height: -webkit-fill-available;
+		}
+	}
 
   .\32xl\:min-w-0 {
     min-width: 0px;
