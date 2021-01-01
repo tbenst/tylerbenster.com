@@ -15,7 +15,7 @@ to travel again, and I have a newfound craving to grab a drink in a packed
 nightclub. Wouldn't it be great if someday soon we could go back to all
 these things because enough people got vaccinated?
 
-![My mother, smiling with her eyes, with her COVID-19 Vaccination Record card.](/images/sandy-vaccine.jpeg){class="max-w-md"}
+![My mother, smiling with her eyes, with her COVID-19 Vaccination Record card.](/images/sandy-vaccine_small.jpeg){class="max-w-md"}
 
 I was recently forwarded an
 [article from the Weston A Price Foundation](https://www.westonaprice.org/covid-19-vaccines-important-points/)

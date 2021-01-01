@@ -38,3 +38,17 @@ https://circleci.com/docs/1.0/config-sample/
 use https://www.doi2bib.org/ and paste reference into papers/research.bib
 ```
 ```
+
+## compress images
+
+[jpeg](https://dev.to/feldroy/til-strategies-for-compressing-jpg-files-with-imagemagick-5fn9):
+```
+convert feldroy-512x512-unoptimized.jpg \
+-sampling-factor 4:2:0 -strip -quality 85 -interlace JPEG -colorspace RGB -resize 1024 -auto-orient
+feldroy-512x512-pagespeed.jpg
+```
+
+[png]
+```
+optipng -o3 vaccine_infographic_2.png
+```
