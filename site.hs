@@ -94,7 +94,7 @@ main = hakyllWith config $ do
             if s > (1024*1024)
                 then do scaleImageCompiler 1024 1024 i
                     >>= compressJpgCompiler 80
-                else return i
+                else copyFileCompiler i
 
     match (  "master.css"
         .||. "images/*.png"
