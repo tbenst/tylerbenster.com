@@ -86,7 +86,7 @@ main = hakyllWith config $ do
 
     -- copy all static content
     -- https://robertwpearce.com/hakyll-pt-4-copying-static-files-for-your-build.html
-    match "images/*.jpg" $ do
+    match ("images/*.jpg" .||. "images/*.jpeg") $ do
         route   idRoute
         compile $ do
             i <- loadImage
@@ -94,7 +94,7 @@ main = hakyllWith config $ do
             if s > (1024*1024)
                 then do scaleImageCompiler 1024 1024 i
                     >>= compressJpgCompiler 80
-                else copyFileCompiler i
+                else return i
 
     match (  "master.css"
         .||. "images/*.png"
