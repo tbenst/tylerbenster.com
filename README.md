@@ -5,9 +5,9 @@ Edit the master branch only; CircleCI will build and push to Site, which is then
 # Post-run
 Once, by hand, must run `sudo certbot --nginx -d www.tylerbenster.com`
 
-## Local haskell
+## Building
 ```
-nix-build && result/bin/site clean && result/bin/site watch
+nix-build -A tylerbenster-com.components.exes.site && result/bin/site clean && result/bin/site watch
 nix-shell shell.nix --run "npx postcss --watch static/css/entry.css -o static/master.css -v"
 ```
 

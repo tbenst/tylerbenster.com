@@ -1,10 +1,12 @@
 --------------------------------------------------------------------------------
 {-# LANGUAGE OverloadedStrings #-}
-import  Data.Monoid        (mappend)
-import  Hakyll
-import  Data.List          (isPrefixOf, isSuffixOf)
-import  System.FilePath    (takeFileName)
-import  System.Process     (system)
+import Data.Monoid          (mappend)
+import Hakyll
+import Data.List            (isPrefixOf, isSuffixOf)
+import System.FilePath      (takeFileName)
+import System.Process       (system)
+import Data.Maybe           (fromMaybe)
+import Hakyll.Images        (loadImage, compressJpgCompiler, scaleImageCompiler)
 import qualified Hakyll.Images.Metadata as M
 
 --------------------------------------------------------------------------------
@@ -91,7 +93,7 @@ main = hakyllWith config $ do
             s <- imageSize <$> M.imageMetadata i
             if s > (1024*1024)
                 then do scaleImageCompiler 1024 1024 i
-                    >>= compressJpgCompiler 70
+                    >>= compressJpgCompiler 80
                 else return i
 
     match (  "master.css"
@@ -135,4 +137,12 @@ config = Configuration
     , previewHost          = "127.0.0.1"
     , previewPort          = 8000
     }
-  
+  where
+    ignoreFile' path
+        | "."    `isPrefixOf` fileName = True
+        | "#"    `isPrefixOf` fileName = True
+        | "~"    `isSuffixOf` fileName = True
+        | ".swp" `isSuffixOf` fileName = True
+        | otherwise                    = False
+      where
+        fileName = takeFileName path

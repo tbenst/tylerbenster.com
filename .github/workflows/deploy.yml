@@ -25,8 +25,8 @@ jobs:
       run: nix-shell --run "npm install tailwindcss @tailwindcss/typography && npm i -D postcss postcss-cli postcss-import autoprefixer postcss-100vh-fix"
     - name: preprocess css
       run: nix-shell --run "npx postcss static/css/entry.css -o static/master.css"
-    - name: build hakyll
-      run: nix-build
+    - name: build hakyll site exe
+      run: nix-build -A tylerbenster-com.components.exes.site
     - name: build site
       run: ./result/bin/site build
     - name: commit
