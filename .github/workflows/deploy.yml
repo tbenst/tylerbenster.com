@@ -22,7 +22,7 @@ jobs:
         # If you chose API tokens for write access OR if you have a private cache
         authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
     - name: add haskell.nix cache
-      run: sudo touch /nix/nix.conf && sudo echo "trusted-public-keys = hydra.iohk.io:f/Ea+s+dFdN+3Y/G+FDgSq+a5NEWhJGzdjvKNGv0/EQ=\nsubstituters = https://hydra.iohk.io" >> /nix/nix.conf
+      run: sudo touch /nix/nix.conf && sudo sh -c 'echo "trusted-public-keys = hydra.iohk.io:f/Ea+s+dFdN+3Y/G+FDgSq+a5NEWhJGzdjvKNGv0/EQ=\nsubstituters = https://hydra.iohk.io" >> /nix/nix.conf'
     - name: add npm pkgs
       run: nix-shell --run "npm install tailwindcss @tailwindcss/typography && npm i -D postcss postcss-cli postcss-import autoprefixer postcss-100vh-fix"
     - name: preprocess css
