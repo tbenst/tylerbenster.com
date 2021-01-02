@@ -139,4 +139,4 @@ dist
 
 # nix build output
 result
-result-2
+result-*
