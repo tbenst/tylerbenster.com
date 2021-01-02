@@ -12,7 +12,13 @@ nix-shell shell.nix --run "npx postcss --watch static/css/entry.css -o static/ma
 ```
 
 ### nix / local cabal
-`cabal install filepath --dry-run` then add to *.cabal file. Nix will install/build
+```
+nix-shell --run 'cabal install <pkgToAdd> --dry-run'
+# for libraries
+nix-shell --run 'cabal install hakyll-images --dry-run --lib'
+```
+
+then add to *.cabal file. Nix will install/build
 
 ```
 ## niv / nix
@@ -20,6 +26,10 @@ https://dev.to/rpearce/hakyll-pt-6-pure-builds-with-nix-4hb6
 ```
 niv init
 niv update nixpkgs -o NixOS -r nixpkgs -b nixos-20.09
+```
+If haskell packages are marked as broken, can specify revision:
+```
+niv update nixpkgs -a rev=939e04ca726d99dfee838de841b16f3e91e5bc29
 ```
 
 ### Initial setup:

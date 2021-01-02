@@ -5,15 +5,11 @@ import  Hakyll
 import  Data.List          (isPrefixOf, isSuffixOf)
 import  System.FilePath    (takeFileName)
 import  System.Process     (system)
+import qualified Hakyll.Images.Metadata as M
+
 --------------------------------------------------------------------------------
 main :: IO ()
 main = hakyllWith config $ do
-
-    -- match (fromList ["about.rst", "contact.markdown"]) $ do
-    --     route   $ setExtension "html"
-    --     compile $ pandocCompiler
-    --         >>= loadAndApplyTemplate "templates/default.html" defaultContext
-            -- >>= relativizeUrls
 
     match "posts/*" $ do
         route $ setExtension "html"
@@ -88,8 +84,18 @@ main = hakyllWith config $ do
 
     -- copy all static content
     -- https://robertwpearce.com/hakyll-pt-4-copying-static-files-for-your-build.html
+    match "images/*.jpg" $ do
+        route   idRoute
+        compile $ do
+            i <- loadImage
+            s <- imageSize <$> M.imageMetadata i
+            if s > (1024*1024)
+                then do scaleImageCompiler 1024 1024 i
+                    >>= compressJpgCompiler 70
+                else return i
+
     match (  "master.css"
-        .||. "images/*"
+        .||. "images/*.png"
         .||. "media/*") $ do
         route   idRoute
         compile copyFileCompiler
@@ -107,6 +113,13 @@ pagesCompiler template context =
     applyAsTemplate context >>=
     renderPandoc >>=
     loadAndApplyTemplate template context
+
+
+imageSize :: M.Metadatas -> Word
+imageSize m = height * width
+    where
+        width  = fromMaybe 1 $ M.lookup M.Width m
+        height = fromMaybe 1 $ M.lookup M.Height m
 --------------------------------------------------------------------------------
 
 config :: Configuration
@@ -122,12 +135,4 @@ config = Configuration
     , previewHost          = "127.0.0.1"
     , previewPort          = 8000
     }
-  where
-    ignoreFile' path
-        | "."    `isPrefixOf` fileName = True
-        | "#"    `isPrefixOf` fileName = True
-        | "~"    `isSuffixOf` fileName = True
-        | ".swp" `isSuffixOf` fileName = True
-        | otherwise                    = False
-      where
-        fileName = takeFileName path
+  
