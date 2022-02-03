@@ -7,7 +7,7 @@ For speaking inquiries, please email [speaking@tylerbenster.com](mailto:speaking
 ## Headshot & Bio
 ![](/images/tyler_benster_web.jpg "Tyler Benster headshot"){class="max-w-sm"}
 
-Tyler is a Neuroscience PhD student at Stanford University and a General Partner at Asimov Ventures. At Asimov Ventures, Tyler has invested in more than 20 startups across 3D printing, robotics, and frontier tech, including Additive Orthopaedics, Sadako, Ghost Robotics, and Kiwi. As a writer and analyst, he has been featured in Bloomberg, TechCrunch, GigaOm, Wohlers Report, and Computer World, and has chaired or keynoted at more than twenty international conferences, including Inside 3D Printing and RoboUniverse. His scientific work has been published in Cell and Scientific Reports. Tyler received a B.S. in Applied Mathematics and Economics at Brown University and grew up on Mercer Island in Washington State.
+Tyler is a Neuroscience PhD student at Stanford University and a General Partner at Asimov Ventures. His scientific work has been published in Cell and Scientific Reports. At Asimov Ventures, Tyler has invested in more than 25 startups across crypto, 3D printing, robotics, and frontier tech, including Kadena (billion-dollar market cap), Additive Orthopaedics (sold to Paragon28), Collider (sold to Essentium), Obsess, Fabric8labs, Ghost Robotics, Sadako, and Kiwi. As a writer and analyst, he has been featured in Bloomberg, TechCrunch, Fortune, Forbes, GigaOm, and Computer World, and has chaired or keynoted at more than twenty international conferences, including Inside 3D Printing and RoboUniverse. Tyler received a B.S. in Applied Mathematics and Economics at Brown University and grew up on Mercer Island in Washington State.
 
 ## Keynote
 - Inside 3D Printing Seoul 2017
