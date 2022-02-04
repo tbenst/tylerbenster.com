@@ -1,6 +1,6 @@
 # tylerbenster.com
 
-Edit the master branch only; GitHub ActionsS will build and push to Site, which is then hosted.
+Edit the master branch only; GitHub Actions will build and push to Site, which is then hosted.
 
 # Post-run
 Once, by hand, must run `sudo certbot --nginx -d www.tylerbenster.com`
