@@ -26,7 +26,7 @@ jobs:
     - name: add haskell.nix substituters
       run: sed -i '/^substituters =/ s/$/ https:\/\/hydra.iohk.io/' ~/.config/nix/nix.conf
     - name: add npm pkgs
-      run: nix-shell --run "npm install tailwindcss @tailwindcss/typography && npm i -D postcss postcss-cli postcss-import autoprefixer postcss-100vh-fix"
+      run: nix-shell --run "npm install tailwindcss @tailwindcss/typography && npm i -D postcss postcss-cli postcss-import autoprefixer postcss-100vh-fix @fullhuman/postcss-purgecss"
     - name: preprocess css
       run: nix-shell --run "npx postcss static/css/entry.css -o static/master.css"
     - name: build hakyll site exe
