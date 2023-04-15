@@ -32,5 +32,5 @@
       };
   }];
   # Specify the GHC version to use.
-  compiler-nix-name = "ghc8102"; # Not required for `stack.yaml` based projects.
+  compiler-nix-name = "ghc961"; # Not required for `stack.yaml` based projects.
 }

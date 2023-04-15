@@ -24,7 +24,7 @@
         overlays = [ haskellNix.overlay
           (final: prev: {
             hakyllProject = final.haskell-nix.project' {
-              src = ./ssg;
+              src = ./.;
               compiler-nix-name = "ghc925";
               shell.buildInputs = [
                 hakyll-site
