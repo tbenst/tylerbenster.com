@@ -1,7 +1,7 @@
 name:               tylerbenster-com
 version:            0.2.0.0
 build-type:         Simple
-cabal-version:      >= 2.4
+cabal-version:      2.4
 
 executable site
   main-is:          site.hs
