@@ -4,9 +4,9 @@ no_header: True
 homepage: True
 ---
 
-I am a Neurosciences PhD candidate at Stanford, where I'm co-advised by [Karl Deisseroth](https://web.stanford.edu/group/dlab/about_pi.html) and [Shaul Druckmann](https://www.druckmannlab.com/). I develop methods for noninvasive read & write access to brains with single-neuron resolution, using two-photon microscopy and holographic stimulation, and use this data to train massive machine learning models that reverse engineer the brain of the larval zebrafish.
+I am a Neurosciences PhD candidate at Stanford, where I'm co-advised by [Shaul Druckmann](https://www.druckmannlab.com/) and [Karl Deisseroth](https://web.stanford.edu/group/dlab/about_pi.html). My work is focused on developing a silent speech interface that enables dictating text without making a sound. This work is funded by the Wu Tsai Neurosciences Institute and the Institute for Human-Centered Artifical intelligence.
 
-I also work as a General Partner at [Asimov Ventures](https://asimovventures.com/), an early-stage venture capital fund focused on 3D printing, robotics, crypto, and neurotech, where I execute new investments and support our portfolio. Since leading the first institutional investment in [Kadena](kadena.io/) back in 2017, I  work closely with partners to grow the billion-dollar Kadena ecosystem.
+I also work as a General Partner at [Asimov Ventures](https://asimovventures.com/), an early-stage venture capital fund focused on 3D printing, robotics, crypto, and neurotech, where I execute new investments and support our portfolio. After leading the first institutional investment in [Kadena](kadena.io/) back in 2017, I've since worked with Kadena Eco as the Tech Adoption Lead.
 
 ### About me {class="font-black text-3xl text-gray-900 text-center"}
 I was born in Palo Alto and grew up just outside of Seattle on beautiful Mercer Island. At a young age, captivated by shimmering vignettes of positronic brains and matter fabricators, I fell in love with science-fiction. Following the footsteps of Isaac Asimov's protagonist Hari Seldon, I deemed myself a psychohistorian: a student of a fictional science combining psychology, history, economics, and mathematics to predict the course of future events.
