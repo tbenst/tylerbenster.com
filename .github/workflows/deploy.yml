@@ -14,6 +14,15 @@ jobs:
     - uses: cachix/install-nix-action@v20
       with:
         nix_path: nixpkgs=channel:nixos-22.11
+        github_access_token: ${{ secrets.GITHUB_TOKEN }}
+        extra_nix_config: |
+          access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
+          allow-import-from-derivation = true
+          auto-optimise-store = true
+          experimental-features = nix-command flakes
+          substituters = https://cache.nixos.org https://cache.iog.io https://cache.zw3rk.com https://hydra.iohk.io
+          trusted-public-keys = cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY= hydra.iohk.io:f/Ea+s+dFdN+3Y/G+FDgSq+a5NEWhJGzdjvKNGv0/EQ= loony-tools:pr9m4BkM/5/eSTZlkQyRt57Jz7OMBxNSUiMC4FkcNfk=
+
     - uses: cachix/cachix-action@v12
       with:
         name: tbenst
@@ -21,10 +30,6 @@ jobs:
         signingKey: '${{ secrets.CACHIX_SIGNING_KEY }}'
         # If you chose API tokens for write access OR if you have a private cache
         authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
-    - name: add cache pub keys
-      run: sed -i '/^trusted-public-keys =/ s/$/ hydra.iohk.io:f\/Ea+s+dFdN+3Y\/G+FDgSq+a5NEWhJGzdjvKNGv0\/EQ= loony-tools:pr9m4BkM\/5\/eSTZlkQyRt57Jz7OMBxNSUiMC4FkcNfk= cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY=/' ~/.config/nix/nix.conf
-    - name: add cache substituters
-      run: sed -i '/^substituters =/ s/$/ https:\/\/hydra.iohk.io https:\/\/cache.iog.io https:\/\/cache.zw3rk.com https:\/\/cache.nixos.org/' ~/.config/nix/nix.conf
     - name: add npm pkgs
       run: nix-shell --run "npm install tailwindcss @tailwindcss/typography && npm i -D postcss postcss-cli postcss-import autoprefixer postcss-100vh-fix @fullhuman/postcss-purgecss"
     - name: preprocess css
