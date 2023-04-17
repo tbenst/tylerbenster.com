@@ -1,8 +1,15 @@
 ---
 title: Writing
 ---
-## Peer reviewed
+1. [Academic](#academic)
+1. [Blog](#blog)
+1. [Industry](#industry)
+
+## Academic
 <div class="text-base">
+1. [@Babino2023]
+1. [@Benster2022]
+1. [@Kishi2022]
 1. [@Hll2019]
 1. [@Andalman2019]
 </div>
@@ -10,7 +17,7 @@ title: Writing
 ## Blog
 $partial("templates/post-list.html")$
 
-## Published
+## Industry
 - Terry Wohlers, et al. Wohlers Report 2017. *Wohlers Associates*.
 - Tyler Benster. [Innovations in 3D printing](https://techcrunch.com/2016/06/04/3d-printing-is-dead-long-live-3d-printing/). *Techcrunch*, 2016.
 - Tyler Benster. [Unlock the Potential of 3D Printing](media/Unlock the potential of 3D printing.pdf).
