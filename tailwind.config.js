@@ -8,7 +8,7 @@ module.exports = {
     './static/**/*.html',
     './static/**/*.markdown',
     './static/**/*.md',
-  ]
+  ],
   theme: {
     extend: {
       typography: (theme) => ({
