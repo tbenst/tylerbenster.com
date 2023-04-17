@@ -948,9 +948,6 @@ video {
 .max-w-prose {
   max-width: 65ch;
 }
-.max-w-screen-md {
-  max-width: 768px;
-}
 .max-w-sm {
   max-width: 24rem;
 }
