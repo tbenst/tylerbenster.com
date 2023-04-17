@@ -4,6 +4,11 @@ module.exports = {
   plugins: [
     require('@tailwindcss/typography'),
   ],
+  content: [
+    './static/**/*.html',
+    './static/**/*.markdown',
+    './static/**/*.md',
+  ]
   theme: {
     extend: {
       typography: (theme) => ({
