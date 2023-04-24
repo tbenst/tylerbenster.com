@@ -62,3 +62,7 @@ feldroy-512x512-pagespeed.jpg
 ```
 optipng -o3 vaccine_infographic_2.png
 ```
+
+### future TODO (potentially)
+if the build breaks again in future, perhaps should adopt nix flakes to pin dependencies
+https://github.com/rpearce/hakyll-nix-template
