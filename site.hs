@@ -14,7 +14,7 @@ main :: IO ()
 main = hakyllWith config $ do
 
     match "posts/*" $ do
-        route $ setExtension "html"
+        route $ setExtension ""
         compile $ pandocCompiler
             >>= loadAndApplyTemplate "templates/post.html"    postCtx
             >>= loadAndApplyTemplate "templates/page.html" postCtx
@@ -57,7 +57,7 @@ main = hakyllWith config $ do
     match "papers/*.csl" $ compile cslCompiler
 
     match "writing.markdown" $ do
-        route $ setExtension "html"
+        route $ setExtension ""
         compile $ do
             posts <- recentFirst =<< loadAll "posts/*"
             let writingCtx =
@@ -71,14 +71,14 @@ main = hakyllWith config $ do
                 -- >>= relativizeUrls
 
     match "*.markdown" $ do
-        route $ setExtension "html"
+        route $ setExtension ""
         compile $ pandocCompiler
             >>= loadAndApplyTemplate "templates/page.html" defaultContext
             >>= loadAndApplyTemplate "templates/default.html" defaultContext
             -- >>= relativizeUrls
 
     match "*.html" $ do
-        route idRoute
+        route $ setExtension ""
         compile $ do
             getResourceBody
                 >>= applyAsTemplate defaultContext
