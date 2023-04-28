@@ -7,6 +7,7 @@ import System.FilePath      (takeFileName)
 import System.Process       (system)
 import Data.Maybe           (fromMaybe)
 import Hakyll.Images        (loadImage, compressJpgCompiler, scaleImageCompiler)
+import Control.Applicative  (empty)
 import qualified Hakyll.Images.Metadata as M
 
 --------------------------------------------------------------------------------
