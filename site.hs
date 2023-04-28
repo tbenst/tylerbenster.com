@@ -14,7 +14,11 @@ main :: IO ()
 main = hakyllWith config $ do
 
     match "posts/*" $ do
-        route $ setExtension ""
+        -- idea from https://chungyc.org/article/technical/website/extensionless
+        -- alternatively could consider https://alexanderlobov.net/posts/2017-02-05-hakyll-clean-urls/
+        -- but instead we rely on nginx to read the .html file for clean urls
+        -- https://stackoverflow.com/questions/38228393/nginx-remove-html-extension
+        route $ setExtension "html"
         compile $ pandocCompiler
             >>= loadAndApplyTemplate "templates/post.html"    postCtx
             >>= loadAndApplyTemplate "templates/page.html" postCtx
@@ -28,6 +32,7 @@ main = hakyllWith config $ do
             let archiveCtx =
                     listField "posts" postCtx (return posts) `mappend`
                     constField "title" "Archives"            `mappend`
+                    cleanUrlField                            `mappend`
                     defaultContext
 
             makeItem ""
@@ -42,26 +47,21 @@ main = hakyllWith config $ do
     match "homepage.markdown" $ do
         route $ constRoute "index.html"
 
-        compile $ do
-            posts <- recentFirst =<< loadAll "posts/*"
-            let homepageCtx =
-                    listField "posts" postCtx (return posts) `mappend`
-                    defaultContext
-
-            pandocCompiler
-                >>= loadAndApplyTemplate "templates/homepage.html" homepageCtx
-                >>= loadAndApplyTemplate "templates/default.html" homepageCtx
+        compile $ pandocCompiler
+                >>= loadAndApplyTemplate "templates/homepage.html" defaultContext
+                >>= loadAndApplyTemplate "templates/default.html" defaultContext
                 -- >>= relativizeUrls
 
     match "papers/*.bib" $ compile biblioCompiler
     match "papers/*.csl" $ compile cslCompiler
 
     match "writing.markdown" $ do
-        route $ setExtension ""
+        route $ setExtension "html"
         compile $ do
             posts <- recentFirst =<< loadAll "posts/*"
             let writingCtx =
                     listField "posts" postCtx (return posts) `mappend`
+                    cleanUrlField                            `mappend`
                     defaultContext
             pandocBiblioCompiler "papers/blog.csl" "papers/research.bib"
                 >>= applyAsTemplate writingCtx
@@ -71,14 +71,14 @@ main = hakyllWith config $ do
                 -- >>= relativizeUrls
 
     match "*.markdown" $ do
-        route $ setExtension ""
+        route $ setExtension "html"
         compile $ pandocCompiler
             >>= loadAndApplyTemplate "templates/page.html" defaultContext
             >>= loadAndApplyTemplate "templates/default.html" defaultContext
             -- >>= relativizeUrls
 
     match "*.html" $ do
-        route $ setExtension ""
+        route idRoute
         compile $ do
             getResourceBody
                 >>= applyAsTemplate defaultContext
@@ -108,6 +108,14 @@ main = hakyllWith config $ do
 
 
 --------------------------------------------------------------------------------
+-- no idea on the type signature here ;)
+-- later on when local build fixed, we can try to use this to replace
+-- writingCtx and 
+-- postListCtx :: _ -> Context String
+-- postListCtx posts =
+--     listField "posts" postCtx (return posts) `mappend`
+--     defaultContext
+
 postCtx :: Context String
 postCtx =
     dateField "date" "%B %e, %Y" `mappend`
@@ -120,6 +128,14 @@ pagesCompiler template context =
     renderPandoc >>=
     loadAndApplyTemplate template context
 
+cleanUrlField :: Context a
+cleanUrlField = field "cleanurl" $
+    fmap (maybe empty $ removeHtmlExtension . toUrl) . getRoute . itemIdentifier
+
+removeHtmlExtension :: String -> String
+removeHtmlExtension url = if ".html" `isSuffixOf` url
+    then take (length url - 5) url
+    else url
 
 imageSize :: M.Metadatas -> Word
 imageSize m = height * width
