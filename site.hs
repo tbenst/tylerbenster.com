@@ -35,7 +35,7 @@ main = hakyllWith config $ do
                 >>= loadAndApplyTemplate "templates/default.html" archiveCtx
                 -- >>= relativizeUrls
     
-    create ["cal/30-min"] $ do
+    create ["cal/30-min.html"] $ do
         route idRoute
         compile $ makeItem $ Redirect "https://fantastical.app/tbenst/30-min"
 
