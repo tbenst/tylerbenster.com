@@ -33,7 +33,6 @@ main = hakyllWith config $ do
             let archiveCtx =
                     listField "posts" postCtx (return posts) `mappend`
                     constField "title" "Archives"            `mappend`
-                    cleanUrlField                            `mappend`
                     defaultContext
 
             makeItem ""
@@ -62,7 +61,6 @@ main = hakyllWith config $ do
             posts <- recentFirst =<< loadAll "posts/*"
             let writingCtx =
                     listField "posts" postCtx (return posts) `mappend`
-                    cleanUrlField                            `mappend`
                     defaultContext
             pandocBiblioCompiler "papers/blog.csl" "papers/research.bib"
                 >>= applyAsTemplate writingCtx
@@ -120,6 +118,7 @@ main = hakyllWith config $ do
 postCtx :: Context String
 postCtx =
     dateField "date" "%B %e, %Y" `mappend`
+    cleanUrlField `mappend`
     defaultContext
 
 pagesCompiler :: Identifier -> Context String -> Compiler (Item [Char])
